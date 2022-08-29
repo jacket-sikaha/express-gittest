@@ -10,3 +10,5 @@
 
 module.exports = require("./lib/express");
 console.log(2);
+console.log(2);
+console.log(2);
