@@ -6,6 +6,9 @@
  * MIT Licensed
  */
 
-'use strict';
+"use strict";
 
-module.exports = require('./lib/express');
+module.exports = require("./lib/express");
+console.log(2);
+console.log(2);
+console.log(2);
