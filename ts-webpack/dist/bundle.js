@@ -1,0 +1,2 @@
+(()=>{"use strict";let o,l;function n(o,l){return o+l}function e(o,l){return o}o=1,l="23",console.log(e(1)),console.log(e(1)),console.log(n(1,2)),console.log(n(1,2)),console.log(222)})();
+//# sourceMappingURL=bundle.js.map
