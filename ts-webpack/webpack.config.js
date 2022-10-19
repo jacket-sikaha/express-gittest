@@ -23,7 +23,22 @@ module.exports = {
         //test指定的是规则生效的文件
         test: /\.ts$/,
         //要使用的loader
-        use: "ts-loader",
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            //设置预定义的环境
+            presets: [[
+              //指定环境的插件
+              '@babel/preset-env'
+              //配置信息
+              ,{
+                targets:{"chrome":'88'}
+              }
+            ]
+              
+            ],
+            plugins: ['@babel/plugin-proposal-object-rest-spread']
+          }, "ts-loader"],
         //要排除的文件
         exclude: "/ts-webpack/node_modules",
       },
@@ -36,7 +51,7 @@ module.exports = {
   //用来设置引用模块，以ts为模块导入需要此配置
   resolve: { extensions: [".ts", ".js"] },
   devtool: "source-map",
-  mode: "production",
+  mode: " development",
   plugins: [
     //打包生成html插件，自动配置打包js文件
     new htmlPlugin({ template: "./src/index.html" }),

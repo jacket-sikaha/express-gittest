@@ -1,16 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <style>
+      svg {
+        width: 100%;
+      }
+      text {
+        font-size: 1.6rem;
+      }
+      .a {
+        width: 10rem;
+        height: 5rem;
+      }
+    </style>
     <script>
-        function name(params) {
-            
+      console.log("faith=============");
+      !(function (x) {
+        function w() {
+          var v,
+            u,
+            t,
+            tes,
+            s = x.document,
+            r = s.documentElement,
+            a = r.getBoundingClientRect().width;
+          if (!v && !u) {
+            var n = !!x.navigator.appVersion.match(/AppleWebKit.*Mobile.*/);
+            v = x.devicePixelRatio;
+            tes = x.devicePixelRatio;
+            (v = n ? v : 1), (u = 1 / v);
+          }
+          if (a >= 640) {
+            // 40
+            /* 浏览器默认的font-size: 16px */
+            /* 16 * 62.5 = 10px */
+            /* 1rem = 10px */
+            //   font-size: 62.5%;
+            // console.log('faith=============16 * 62.5%', 16 * 0.625)
+            r.style.fontSize = 16 * 0.625 + "px";
+          } else {
+            if (a <= 320) {
+              //   r.style.fontSize = '20px'
+              r.style.fontSize = 0.5 * 16 * 0.625 + "px";
+            } else {
+              r.style.fontSize = 10 - (640 - a) / 64 + "px";
+            }
+          }
         }
+        x.addEventListener("resize", function () {
+          w();
+        });
+        w();
+      })(window);
     </script>
-</body>
+  </head>
+  <body>
+    <div class="a">
+      <svg width="60" height="80" viewBox="0 0 600 80">
+        <text font-family="'PingFang SC','Microsoft Yahei'">
+          SVG
+          本质上你可以看成是一张图片，给图片设置width:100%就能够跟随容器尺寸拉伸，SVG
+          也是如。并且由于 SVG
+          是矢量的，因此，再怎么拉伸我们的文字效果都是清晰细腻的 ——
+          这种方法的原理就在于此！ SVG
+          中元素可以用来呈现文本，嵌套关系为，个人觉得和HTML中的关系类似。
+          拿开篇文章中的案例来说，用 svg 可以这么写： 作者：yun_小梦
+          链接：https://juejin.cn/post/7092279606094331912 来源：稀土掘金
+          著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+        </text>
+      </svg>
+    </div>
+
+    <script>
+      function name(params) {}
+    </script>
+  </body>
 </html>
